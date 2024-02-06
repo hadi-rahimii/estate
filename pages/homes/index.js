@@ -3,6 +3,14 @@ import db from "./../../data/db.json";
 import Home from "@/components/modules/Home";
 
 function index() {
+  const [search, setSearch] = useState("");
+  const [homes, setHomes] = useState([...db.homes]);
+
+  useEffect(() => {
+    const newHomes = db.homes.filter((home) => home.title.includes(search));
+    setHomes(newHomes);
+  }, [search]);
+
   return (
     <div class="home-section" id="houses">
       <div class="home-filter-search">
@@ -23,7 +31,7 @@ function index() {
       </div>
 
       <div class="homes">
-        {db.homes.slice(0, 6).map((home) => (
+        {homes.slice(0, 6).map((home) => (
           <Home key={home.id} {...home} />
         ))}
       </div>
