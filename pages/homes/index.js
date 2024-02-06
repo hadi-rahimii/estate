@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import db from "./../../data/db.json";
 import Home from "@/components/modules/Home";
 
@@ -40,6 +40,18 @@ function index() {
     }
   }, [sort]);
 
+  const paginateHandler = (event, page) => {
+    event.preventDefault();
+
+    const endIndex = 3 * page;
+    const startIndex = endIndex - 3;
+
+    const paginatedHomes = db.homes.slice(startIndex, endIndex);
+    setHomes(paginatedHomes);
+
+    // Codes
+  };
+
   return (
     <div class="home-section" id="houses">
       <div class="home-filter-search">
@@ -54,30 +66,35 @@ function index() {
           </select>
         </div>
         <div class="home-search">
-          <input type="text" value={search} onChange={((e) => setSearch(e.target.value))} placeholder="جستجو کنید" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="جستجو کنید"
+          />
         </div>
       </div>
 
       <div class="homes">
-        {homes.slice(0, 6).map((home) => (
+        {homes.slice(0, 3).map((home) => (
           <Home key={home.id} {...home} />
         ))}
       </div>
 
       <ul class="pagination__list">
-        <li class="pagination__item">
-          <a href="#" class=""></a>
-        </li>
-        <li class="pagination__item">
-          <a href="#" class="">
-            2
-          </a>
-        </li>
-        <li class="pagination__item active">
-          <a href="#" class="">
-            1
-          </a>
-        </li>
+        {Array.from({ length: Math.ceil(db.homes.length / 3) }).map(
+          (item, index) => (
+            <li
+              key={index + 1}
+              className="pagination__item"
+              onClick={(event) => paginateHandler(event, index + 1)}
+            >
+              <a href="#" className="">
+                {index + 1}
+              </a>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
