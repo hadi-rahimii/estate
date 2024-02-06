@@ -1,11 +1,23 @@
 import React from "react";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import {
+  faBarChart,
+  faGlobe,
+  faKey,
+  faLock,
+  faMapMarker,
+  faTrophy,
+} from "@fortawesome/free-solid-svg-icons";
+config.autoAddCss = false;
 
 export default function Features() {
   return (
     <div className="featurs">
       <div className="featur">
         <span className="featur__icon">
-          <i className="fa fa-globe"></i>
+        <FontAwesomeIcon icon={faGlobe} />
         </span>
         <h4 className="u-heading--dark">بهترین خانه های لوکس جهان</h4>
         <p className="u-paragraph">
@@ -17,7 +29,7 @@ export default function Features() {
 
       <div className="featur">
         <span className="featur__icon">
-          <i className="fa fa-map-marker"></i>
+        <FontAwesomeIcon icon={faMapMarker} />
         </span>
         <h4 className="u-heading--dark">همه خانه ها در مکان های برتر</h4>
         <p className="u-paragraph">
@@ -27,7 +39,7 @@ export default function Features() {
       </div>
       <div className="featur">
         <span className="featur__icon">
-          <i className="fa fa-key"></i>
+        <FontAwesomeIcon icon={faKey} />
         </span>
         <h4 className="u-heading--dark">خانه جدید در یک هفته</h4>
         <p className="u-paragraph">
@@ -38,7 +50,7 @@ export default function Features() {
       </div>
       <div className="featur">
         <span className="featur__icon">
-          <i className="fa fa-bar-chart-o"></i>
+        <FontAwesomeIcon icon={faBarChart} />
         </span>
         <h4 className="u-heading--dark">فقط بهترین خواص</h4>
         <p className="u-paragraph">
@@ -49,7 +61,7 @@ export default function Features() {
       </div>
       <div className="featur">
         <span className="featur__icon">
-          <i className="fa fa-lock"></i>
+        <FontAwesomeIcon icon={faLock} />
         </span>
         <h4 className="u-heading--dark">پرداخت های ایمن در بعدی</h4>
         <p className="u-paragraph">
@@ -60,7 +72,7 @@ export default function Features() {
       </div>
       <div className="featur">
         <span className="featur__icon">
-          <i className="fa fa-trophy"></i>
+        <FontAwesomeIcon icon={faTrophy} />
         </span>
         <h4 className="u-heading--dark">1% مشاوران املاک برتر</h4>
         <p className="u-paragraph">
