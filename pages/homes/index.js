@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import db from "./../../data/db.json";
 import Home from "@/components/modules/Home";
 
@@ -26,7 +26,7 @@ function index() {
           </select>
         </div>
         <div class="home-search">
-          <input type="text" placeholder="جستجو کنید" />
+          <input type="text" value={search} onChange={((e) => setSearch(e.target.value))} placeholder="جستجو کنید" />
         </div>
       </div>
 
