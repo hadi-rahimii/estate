@@ -7,5 +7,6 @@
 ### This project is about real estate sales, which helps us to buy houses and villas and takes less time from us
 ### I hope I was able to help you
 
+## Here,  some photo of home page :)
 
-
+<img src='Screenshot 2024-02-14 123626.png'/>
