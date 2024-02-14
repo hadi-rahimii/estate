@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home({ title, id, price, meterage, roomCount, img }) {
   return (
     <div className="card">
-      <img src="img/gal-1.jpeg" alt="House 6" className="card__img" />
+      <img src={img} alt="House 6" className="card__img" />
       <h5 className="card__title">{title}</h5>
       <span className="card__like">
         <i className="fa fa-heart"></i>
